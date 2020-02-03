@@ -55,7 +55,8 @@ def main():
     random.seed(2525)
     a = [random.randrange(0,100) for _ in range(N)]
     print(a)
-    st = seg_tree(N, lambda x,y: x if x >= y else y, int(-1))
+    #st = seg_tree(N, lambda x,y: x if x >= y else y, int(-1))
+    st = seg_tree(N, max, int(-1))
     for i in range(N):
         st.update(i, a[i])
     st.dump()
